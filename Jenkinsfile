@@ -1,4 +1,4 @@
-node(testenv) {
+node('testenv') {
     stage('git') {
         git 'https://github.com/dcherif/game-of-life.git'
     }
