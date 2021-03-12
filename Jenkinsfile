@@ -1,7 +1,7 @@
 node(dev) {
-    properties([pipelinetriggers([30 * * * 15])])
+    properties([pipelinetriggers([H * * * 15])])
     stage('git') {
-        git 'https://github.com/dcherif/game-of-life.git'
+        git 'https://github.com/dcherif/game-of-life.git',
     }
     stage('build') {
         sh 'mvn clean package'
