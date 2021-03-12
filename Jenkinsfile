@@ -1,6 +1,6 @@
 pipeline {
     agent { label 'testenv'}
-    triggers {cron('30 * * * 1-5')}
+    triggers { pollscm('30 * * * 1-5')}
     stages {
         stage('git'){
             steps {
