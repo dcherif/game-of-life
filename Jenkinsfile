@@ -1,5 +1,5 @@
 node('testenv') {
-    properties([pipelinetriggers([cron('30 * * * 1-5')])])
+    properties([pipelinetriggers([pollSCM('30 * * * 1-5')])])
     stage('git') {
         git 'https://github.com/dcherif/game-of-life.git'
     }
