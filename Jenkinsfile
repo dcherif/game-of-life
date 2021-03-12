@@ -1,4 +1,4 @@
-node('dev') {
+node('testenv') {
     properties([pipelinetriggers([cron('H * * * 1-5')])])
     stage('git') {
         git 'https://github.com/dcherif/game-of-life.git',
