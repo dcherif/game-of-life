@@ -1,5 +1,4 @@
 node('testenv') {
-    properties([pipelinetriggers([30 * * * 15])])
     stage('git') {
         git 'https://github.com/dcherif/game-of-life.git'
     }
