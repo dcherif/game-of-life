@@ -1,7 +1,7 @@
 node('testenv') {
     properties([pipelinetriggers([cron('H * * * 1-5')])])
     stage('git') {
-        git 'https://github.com/dcherif/game-of-life.git',
+        git 'https://github.com/dcherif/game-of-life.git'
     }
     stage('build') {
         sh 'mvn clean package'
