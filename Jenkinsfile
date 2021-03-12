@@ -1,5 +1,4 @@
-node('dev') {
-    properties([pipelinetriggers([cron('H * * * 1-5')])])
+node('testenv') {
     stage('git') {
         git 'https://github.com/dcherif/game-of-life.git'
     }
@@ -8,5 +7,8 @@ node('dev') {
     }
     stage('testresults'){
         junit 'gameoflife-web/target/surefire-reports/*.xml'
+    }
+    stage('archiveartifacts'){
+        archiveartifacts artifacts: 'gameoflife-web/target/*.war', followSymlinks: false
     }
 }
