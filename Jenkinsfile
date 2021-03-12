@@ -1,9 +1,9 @@
 pipeline {
     agent { label 'testenv'}
-    stage {
+    stages {
         stage('git'){
             steps {
-                git branch 'declarativepipeline', url: 'https://github.com/dcherif/game-of-life.git'
+                git branch: 'declarativepipeline', url: 'https://github.com/dcherif/game-of-life.git'
             }
         }
         stage('compile') {
