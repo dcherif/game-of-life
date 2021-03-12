@@ -10,6 +10,6 @@ node('testenv') {
         junit 'gameoflife-web/target/surefire-reports/*.xml'
     }
     stage('archiveartifacts'){
-        archiveartifacts artifacts: 'gameoflife-web/target/*.war', followSymlinks: false
+        archiveartifacts artifacts: 'gameoflife-web/target/*.war'
     }
 }
