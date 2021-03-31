@@ -10,6 +10,11 @@ pipeline {
         stage('compile') {
             steps{
                 sh 'mvn clean package'
+            },
+            post {
+                always {
+                    jiraSendBuildInfo branch: '', site: 'dcheriftech.atlassian.net'
+                }
             }
         }
     }
