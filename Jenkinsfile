@@ -13,7 +13,7 @@ pipeline {
             },
             post {
                 always {
-                    jiraSendBuildInfo branch: '', site: 'dcheriftech.atlassian.net'
+                    jiraSendDeploymentInfo environmentId: '', environmentName: '', environmentType: 'development', issueKeys: ['TES-1'], serviceIds: [''], site: 'dcheriftech.atlassian.net', state: 'unknown'
                 }
             }
         }
